@@ -107,8 +107,8 @@ async def howtorun(bot: Bot, keys: str = ArgPlainText("key1")):
         for i in showtable:
             message += f"便签id: {i[2]}    记录时间: {i[1]} \n {i[0]} \n----------------------\n"
 
-        await ntc_start.send(message)
-        time.sleep(0.01)
+            await ntc_start.send(message)
+            time.sleep(0.01)
         await ntc_start.send("----------------------\n"+
                              "接下来要进行什么操作喵♪？\n"+
                              "输入“/update”可以修改便签内容喵♪~\n"+
@@ -135,8 +135,8 @@ async def howtorun(bot: Bot, keys: str = ArgPlainText("key1")):
         for i in showtable:
             message += f"便签id: {i[3]}\n记录者id: {i[0]}    记录时间: {i[2]} \n {i[1]} \n----------------------\n"
 
-        await ntc_start.send(message)
-        time.sleep(0.01)
+            await ntc_start.send(message)
+            time.sleep(0.01)
         await ntc_start.send("----------------------\n"+
                              "输入“/deletemore”可以进入管理员删除模式喵♪~\n"+
                              "输入其他内容退出便签功能喵♪~")

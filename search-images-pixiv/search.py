@@ -206,7 +206,7 @@ def random_pictures(types):
 
     #获取画师id，图片id
     print("    Getting image info...")
-    name = driver.find_element(By.XPATH, "//a[@class='sc-d98f2c-0 sc-jtiXyc bVddQM']/div").text
+    name = driver.find_element(By.XPATH, "//a[@class='sc-d98f2c-0 sc-10gpz4q-6 fATptn']/div").text
     pid = pic_src[31:]
     
     #存在标签页变量为1，不存在为0（判断是否多图）

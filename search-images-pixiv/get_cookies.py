@@ -14,6 +14,7 @@ def browser_initial():
     """"
     进行浏览器初始化
     """
+
     browser = webdriver.Chrome()
     log_url = "https://accounts.pixiv.net/login?return_to=https%3A%2F%2Fwww.pixiv.net%2F&lang=zh&source=pc&view_type=page"
     return log_url,browser
@@ -23,7 +24,7 @@ def get_cookies(log_url,browser):
     获取cookies保存至本地
     """
     browser.get(log_url)
-    time.sleep(20)     # 进行扫码
+    time.sleep(40)     # 登录
     dictCookies = browser.get_cookies()    # 获取list的cookies
     jsonCookies = json.dumps(dictCookies) #  转换成字符串保存
     

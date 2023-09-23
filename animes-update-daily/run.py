@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 import pytz
 from datetime import datetime
+import re
 
 #获取现在月份、年度
 now_time_cn_month = datetime.now(pytz.timezone('Asia/Shanghai')).strftime("%m")
@@ -53,12 +54,16 @@ def recursion_func(first_day_position):
     div_date_line = first_day_position.find_next("div", class_="div_date")  #找到需要输出的上一个div
     output_name_line = div_date_line.find_next("div").find("td") #输出行,番剧名字
     output_time_line = div_date_line.find(class_="imgep")   #番剧当日播出时间
-    output_picture_line = div_date_line.find("img")['src']  #封面图
+    output_picture_line = div_date_line.find("img")['src'] #封面图 
+
+    search_line = r"(https://[^\s]+)\.jpg"
+    pic_link = re.findall(search_line, str(output_picture_line))
+    output_pic_link = str(pic_link[0]) + ".jpg" 
 
     #将内容输出到列表result中
     result_name = [output_name_line.get_text()]
     result_time = [output_time_line.get_text()]
-    result_picture = [output_picture_line]
+    result_picture = [output_pic_link]
 
     #负责循环次数，递归调用循环直到如下条件
     search_line = output_name_line.find_next("div")

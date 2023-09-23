@@ -116,3 +116,17 @@ async def random_num():
     ints = random.randint(1, 6)
     await random_nya.send("随机数喵♪： " + str(ints))
     await random_nya.finish()
+
+
+
+
+#一些很有攻击性的言论
+no_girl_friend = on_keyword("七夕", rule=to_me())
+
+@no_girl_friend.handle()
+async def nogirlfriend():
+    await no_girl_friend.send("今天七夕你没有女朋友只能一个人自己在家里玩游戏和互联网上的网友聊天被隔壁阿姨当成负面教材教育孩子")
+    await no_girl_friend.send("只能看着一双双形形色色的人们手牵着手走过街边路过窗沿脉脉深情然后在家里坐在电脑前骗自己说女朋友没有游戏好玩自己只是不想找")
+    await no_girl_friend.send("然后在家里暗自神伤眼泪空留本想着笑话群友也单身时却发现群友早已和心上人双宿双飞徒留自己在群里绝望无助的水群")
+    await no_girl_friend.send("最后甚至质问自己为什么没人喜欢悔恨自己为什么以前不好好努力提升自己为什么不变的更受欢迎时还会被出去约会已经在酒店的群友嘲笑一句")
+    await no_girl_friend.send("是她先给我表白的哦~")
